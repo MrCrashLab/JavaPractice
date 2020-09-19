@@ -20,8 +20,8 @@ public class AppField extends JPanel implements ActionListener {
 
     private void loadImages(){
         for(int i = 0;i<imageIcons.length;i++){
-            System.out.println(Integer.toString(i)+".JPG");
-            imageIcons[i] = new ImageIcon(Integer.toString(i)+".JPG");
+            System.out.println("src//"+Integer.toString(i)+".JPG");
+            imageIcons[i] = new ImageIcon("src//Practic_8//Eigth_3//"+Integer.toString(i)+".JPG");
             images[i] = imageIcons[i].getImage();
         }
     }
