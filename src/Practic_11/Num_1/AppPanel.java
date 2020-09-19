@@ -28,18 +28,18 @@ public class AppPanel extends JPanel {
         public void actionPerformed(ActionEvent ev){
             counter++;
             if (counter <= 3 && constant == Integer.valueOf(input.getText())){
-                JOptionPane.showMessageDialog(null, "Поздравляю!!!\nВы угадали число!\nЧисло: " + constant + "\nВы выиграли!", "output", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Поздравляю!!!\nВы угадали число!\nЧисло: " + constant + "\nВы выиграли!", "Окно", JOptionPane.PLAIN_MESSAGE);
                 System.exit(1);
             }
             else if (counter >= 3 && constant != Integer.valueOf(input.getText())) {
-                JOptionPane.showMessageDialog(null, "Вы не угадaли число.\nЧисло: " + constant + "\nИгра окончена", "output", JOptionPane.PLAIN_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Вы не угадaли число.\nЧисло: " + constant + "\nИгра окончена", "Окно", JOptionPane.PLAIN_MESSAGE);
                 System.exit(1);
             }
             else{
                 if(Integer.valueOf(input.getText())>constant)
-                    JOptionPane.showMessageDialog(null, "Введенное число больше загаданного.", "output", JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Введенное число больше загаданного.", "Окно", JOptionPane.PLAIN_MESSAGE);
                 else if(Integer.valueOf(input.getText())<constant)
-                    JOptionPane.showMessageDialog(null, "Введенное число меньше загаданного.", "output", JOptionPane.PLAIN_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Введенное число меньше загаданного.", "Окно", JOptionPane.PLAIN_MESSAGE);
             }
         }
     }
