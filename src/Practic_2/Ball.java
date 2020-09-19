@@ -1,4 +1,4 @@
-package Second;
+package Practic_2;
 
 public class Ball {
     private int radius = -1;

@@ -1,4 +1,4 @@
-package Third.Third_1;
+package Practic_3.Third_1;
 
 import java.util.Scanner;
 

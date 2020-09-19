@@ -1,4 +1,4 @@
-package First;
+package Practic_1;
 import java.util.Arrays;
 import java.util.Random;
 

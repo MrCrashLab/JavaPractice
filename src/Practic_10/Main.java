@@ -1,4 +1,4 @@
-package Tenth;
+package Practic_10;
 
 import java.util.Scanner;
 

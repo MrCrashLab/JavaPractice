@@ -1,4 +1,4 @@
-package Fourth;
+package Practic_4;
 
 public abstract class Shape {
     protected String color = "red";

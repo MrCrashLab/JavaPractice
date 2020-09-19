@@ -1,6 +1,4 @@
-package Second;
-
-import java.util.Arrays;
+package Practic_2;
 
 public class DogKennel {
     private Dog[] kennel;

@@ -1,20 +1,20 @@
-package Second;
+package Practic_2;
 
-public class Book {
-    private int page = -1;
+public class Shape{
+    private int height = -1;
     private int weight = -1;
     private int depth = -1;
 
-    public Book(int page, int weight, int depth){
-        this.page = page;
+    public Shape(int height, int weight, int depth){
+        this.height = height;
         this.weight = weight;
         this.depth = depth;
     }
 
     @Override
     public String toString() {
-        return "Book{" +
-                "page=" + page +
+        return "Shape{" +
+                "height=" + height +
                 ", weight=" + weight +
                 ", depth=" + depth +
                 '}';

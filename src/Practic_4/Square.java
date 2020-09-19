@@ -1,4 +1,4 @@
-package Fourth;
+package Practic_4;
 
 public class Square extends Shape{
     private double widlen = -1;
