@@ -7,6 +7,7 @@ public class AppWindow extends JFrame {
     public AppWindow(){
         createWindow();
         add(new AppPanel());
+        setVisible(true);
     }
 
     public void createWindow(){
@@ -15,7 +16,6 @@ public class AppWindow extends JFrame {
         setLocation(400, 300);
         setResizable(false);
         setSize(500, 500);
-        setVisible(true);
     }
 
     public static void main(String[] args){new AppWindow();}
