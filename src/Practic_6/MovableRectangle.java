@@ -1,4 +1,4 @@
-package Practic_6_Not_final;
+package Practic_6;
 
 import Practic_5.Movable;
 
