@@ -18,15 +18,15 @@ public class HumanTest {
 
         for (int i = 0;i <num_leg; i++){
             System.out.println("Введите длину " +(i+1) + " ноги ");
-            human.addLeg(in.nextInt());
+            human.addLeg(new Human.Leg(in.nextInt()));
         }
         for (int i = 0;i < num_head;i++){
             System.out.println("Введите диаметр " +(i+1) + " головы ");
-            human.addHead(in.nextInt());
+            human.addHead(new Human.Head(in.nextInt()));
         }
         for (int i = 0;i< num_hand;i++){
             System.out.println("Введите вес " +(i+1) + " руки ");
-            human.addHand(in.nextInt());
+            human.addHand(new Human.Hand(in.nextInt()));
         }
         System.out.println(human.toString());
 

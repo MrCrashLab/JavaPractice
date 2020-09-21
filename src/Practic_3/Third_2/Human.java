@@ -16,9 +16,9 @@ public class Human {
     public Head[] getHeads() {return heads;}
     public Hand[] getHands() {return hands;}
 
-    public void addLeg(int length){legs[num_leg] = new Leg(length);num_leg++;}
-    public void addHead(int diametr){heads[num_head] = new Head(diametr);num_head++;}
-    public void addHand(int heft){hands[num_hand] = new Hand(heft);num_hand++;}
+    public void addLeg(Leg leg){legs[num_leg] = leg;num_leg++;}
+    public void addHead(Head head){heads[num_head] = head;num_head++;}
+    public void addHand(Hand hand){hands[num_hand] = hand;num_hand++;}
 
     @Override
     public String toString() {
@@ -29,21 +29,23 @@ public class Human {
         return tmp;
     }
 
-    private class Leg{
+    public static class Leg{
         private float length = -1;
-        public Leg(int length){this.length = length;}
+        private float percent;
+
+        public Leg(int length){this.length = length;this.percent = percent;}
         public float getLength() {return length;}
         public void setLength(float length){this.length = length;}
     }
 
-    private class Head{
+    public static class Head{
         private int diametr = -1;
         public Head(int diametr){this.diametr = diametr;}
         public int getDiametr() {return diametr;}
         public void setDiametr(int diametr) {this.diametr = diametr;}
     }
 
-    private class Hand{
+    public static class Hand{
         private int heft = -1;
         public Hand(int heft){this.heft = heft;}
         public int getHeft() {return heft;}
