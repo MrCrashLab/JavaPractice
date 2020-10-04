@@ -1,6 +1,7 @@
 package Practic_7;
 
 public class Operator implements EmployeePosition {
+
     @Override
     public String getJobTitle() {
         return "Operator";
@@ -8,6 +9,6 @@ public class Operator implements EmployeePosition {
 
     @Override
     public double calcSalary(double baseSalary) {
-        return baseSalary ;
+        return baseSalary;
     }
 }

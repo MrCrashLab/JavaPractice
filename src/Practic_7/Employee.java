@@ -3,7 +3,7 @@ package Practic_7;
 public class Employee {
     private String name;
     private String secondName;
-    private int baseSalary;
+    private double baseSalary;
     private EmployeePosition position;
 
     public Employee(String name, String secondName, int baseSalary, EmployeePosition position) {
@@ -13,11 +13,36 @@ public class Employee {
         this.position = position;
     }
 
-    public String getName() {return name;}
+    public String getName() {
+        return name;
+    }
 
-    public String getSecondName() {return secondName;}
+    public String getSecondName() {
+        return secondName;
+    }
 
-    public int getBaseSalary() {return baseSalary;}
+    public double getBaseSalary() {
+        return baseSalary;
+    }
 
-    public EmployeePosition getPosition() {return position;}
+    public EmployeePosition getPosition() {
+        return position;
+    }
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    public void setPosition(EmployeePosition position) {
+        this.position = position;
+    }
 }

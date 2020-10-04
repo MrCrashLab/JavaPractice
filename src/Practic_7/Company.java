@@ -1,24 +1,71 @@
 package Practic_7;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
 
 public class Company {
-    private int money;
-    private ArrayList<Employee> employeeList;
+    private double income = 0;
+    private ArrayList<Employee> employeeList = new ArrayList<>();
 
 
-
-    public static void hire(){
-        /*Employee employee = new Employee(new Manager());
-        System.out.println( employee.getPosition().getClass());*/
+    public void hire(Employee employee) {
+        employeeList.add(employee);
     }
 
-    public static void main(String[] args){
-        hire();
+    public void hireAll(ArrayList<Employee> listEmployee) {
+        employeeList.addAll(listEmployee);
     }
 
-    public void hireAll(){}
-    public void fire(){}
-    public void getIncome(){}
+    public void fire(Employee employee) {
+        employeeList.remove(employee);
+    }
+
+    public void fire(int index) {
+        employeeList.remove(index);
+    }
+
+    List<Employee> getTopSalaryStaff(int count) {
+        ArrayList<Employee> tmp = employeeList;
+        Employee tm;
+        for (int i = 0; i < tmp.size() - 1; i++)
+            for (int j = i + 1; j < tmp.size(); j++) {
+                if (tmp.get(i).getPosition().calcSalary(tmp.get(i).getBaseSalary()) < tmp.get(j).getPosition().calcSalary(tmp.get(j).getBaseSalary())) {
+                    tm = tmp.get(j);
+                    tmp.set(j, tmp.get(i));
+                    tmp.set(i, tm);
+                }
+            }
+        return tmp.subList(0, count);
+    }
+
+    List<Employee> getLowestSalaryStaff(int count) {
+        ArrayList<Employee> tmp = employeeList;
+        Employee tm;
+        for (int i = 0; i < tmp.size() - 1; i++)
+            for (int j = i + 1; j < tmp.size(); j++) {
+                if (tmp.get(i).getPosition().calcSalary(tmp.get(i).getBaseSalary()) > tmp.get(j).getPosition().calcSalary(tmp.get(j).getBaseSalary())) {
+                    tm = tmp.get(j);
+                    tmp.set(j, tmp.get(i));
+                    tmp.set(i, tm);
+                }
+            }
+        return tmp.subList(0, count);
+    }
+
+    public void calcIncome() {
+        int i = 0;
+        for (Employee emp : employeeList)
+            if (emp.getPosition() instanceof Manager) {
+                income += ((Manager) emp.getPosition()).generateMoney();
+                System.out.println(i++);
+            }
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public int getStaffSize() {
+        return employeeList.size();
+    }
 }

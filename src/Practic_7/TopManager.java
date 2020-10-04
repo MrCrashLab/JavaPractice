@@ -1,8 +1,11 @@
 package Practic_7;
 
-import java.util.Random;
-
 public class TopManager implements EmployeePosition {
+    Company company;
+
+    public TopManager(Company company) {
+        this.company = company;
+    }
 
     @Override
     public String getJobTitle() {
@@ -11,6 +14,6 @@ public class TopManager implements EmployeePosition {
 
     @Override
     public double calcSalary(double baseSalary) {
-        return baseSalary;
+        return baseSalary + ((company.getIncome() >= 10_000_000) ? (baseSalary * 1.5) : 0);
     }
 }

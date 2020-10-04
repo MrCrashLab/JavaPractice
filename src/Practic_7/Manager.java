@@ -4,6 +4,12 @@ import java.util.Random;
 
 public class Manager implements EmployeePosition {
     private Random random = new Random();
+    private int money = 0;
+
+    public int generateMoney() {
+        this.money = random.nextInt(140_000 - 115_000) + 115_000;
+        return money;
+    }
 
     @Override
     public String getJobTitle() {
@@ -12,6 +18,6 @@ public class Manager implements EmployeePosition {
 
     @Override
     public double calcSalary(double baseSalary) {
-        return 0;//baseSalary + (random.nextInt(140_000 - 115_000) + 115_000) * 0.05;
+        return baseSalary + money * 0.05;
     }
 }
