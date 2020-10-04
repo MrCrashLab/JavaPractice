@@ -1,4 +1,4 @@
-package Practic_7;
+package Practic_7_8;
 
 import java.util.List;
 
