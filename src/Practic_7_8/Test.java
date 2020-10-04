@@ -11,8 +11,10 @@ public class Test {
     public Test() {
         createCompany();
         company.calcIncome();
+        System.out.println("Доход компании " + company.getIncome());
         outputTopSalary(12);
         removeEmployee();
+        System.out.println("Доход компании "+ company.getIncome());
         outputTopSalary(15);
         outputLowSalary(30);
     }

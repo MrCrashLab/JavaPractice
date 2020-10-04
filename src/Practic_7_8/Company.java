@@ -22,6 +22,7 @@ public class Company {
 
     public void fire(int index) {
         employeeList.remove(index);
+        calcIncome();
     }
 
     List<Employee> getTopSalaryStaff(int count) {
@@ -53,11 +54,10 @@ public class Company {
     }
 
     public void calcIncome() {
-        int i = 0;
+        this.income = 0;
         for (Employee emp : employeeList)
             if (emp.getPosition() instanceof Manager) {
                 income += ((Manager) emp.getPosition()).generateMoney();
-                System.out.println(i++);
             }
     }
 
