@@ -10,14 +10,17 @@ public class Company {
 
     public void hire(Employee employee) {
         employeeList.add(employee);
+        calcIncome();
     }
 
     public void hireAll(ArrayList<Employee> listEmployee) {
         employeeList.addAll(listEmployee);
+        calcIncome();
     }
 
     public void fire(Employee employee) {
         employeeList.remove(employee);
+        calcIncome();
     }
 
     public void fire(int index) {
