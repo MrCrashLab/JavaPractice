@@ -2,6 +2,7 @@ package Practic_10;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 
 import static javax.swing.GroupLayout.Alignment.LEADING;
 
@@ -16,6 +17,7 @@ public class MyPanel extends JPanel {
     private JButton buttonD = new JButton("/");
     private ButtonGroup buttonGroup = new ButtonGroup();
     Container container = new Container();
+    DecimalFormat decimalFormat = new DecimalFormat("#.###");
 
     public MyPanel() {
         addComponent();
@@ -39,30 +41,44 @@ public class MyPanel extends JPanel {
 
     private void addListener() {
         buttonP.addActionListener((ev) -> {
-            if (checkField(textFieldA) && checkField(textFieldB))
-                label.setText(String.valueOf(Float.parseFloat(textFieldA.getText()) + Float.parseFloat(textFieldB.getText())));
-            else
+            if (checkField(textFieldA) && checkField(textFieldB)) {
+
+                label.setText(decimalFormat.format(
+                                Float.parseFloat(
+                                        textFieldA.getText()) +
+                                        Float.parseFloat(textFieldB.getText())));
+            }else
                 label.setText("Введите числа");
         });
 
         buttonM.addActionListener((ev) -> {
-            if (checkField(textFieldA) && checkField(textFieldB))
-                label.setText(String.valueOf(Float.parseFloat(textFieldA.getText()) - Float.parseFloat(textFieldB.getText())));
-            else
+            if (checkField(textFieldA) && checkField(textFieldB)) {
+                label.setText(decimalFormat.format(
+                                Float.parseFloat(
+                                        textFieldA.getText()) -
+                                        Float.parseFloat(textFieldB.getText())));
+            }else
                 label.setText("Введите числа");
         });
 
         buttonS.addActionListener((ev) -> {
-            if (checkField(textFieldA) && checkField(textFieldB))
-                label.setText(String.valueOf(Float.parseFloat(textFieldA.getText()) * Float.parseFloat(textFieldB.getText())));
-            else
+            if (checkField(textFieldA) && checkField(textFieldB)) {
+                label.setText(decimalFormat.format(
+                                Float.parseFloat(
+                                        textFieldA.getText()) *
+                                        Float.parseFloat(textFieldB.getText())));
+            }else
                 label.setText("Введите числа");
         });
 
         buttonD.addActionListener((ev) -> {
-            if (checkField(textFieldA) && checkField(textFieldB) && Float.parseFloat(textFieldB.getText()) != 0)
-                label.setText(String.valueOf(Float.parseFloat(textFieldA.getText()) / Float.parseFloat(textFieldB.getText())));
-            else
+            if (checkField(textFieldA) && checkField(textFieldB) && Float.parseFloat(textFieldB.getText()) != 0) {
+                label.setText(decimalFormat.format(
+                                Float.parseFloat(
+                                        textFieldA.getText()) /
+                                        Float.parseFloat(
+                                                textFieldB.getText())));
+            }else
                 label.setText("Введите числа");
         });
     }
