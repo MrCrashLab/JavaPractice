@@ -15,7 +15,7 @@ public class MyPanel extends JPanel {
     private final JButton buttonS = new JButton("*");
     private final JButton buttonD = new JButton("/");
     private Container container = new Container();
-    private DecimalFormat decimalFormat = new DecimalFormat("#.###");
+    private DecimalFormat decimalFormat = new DecimalFormat("#.####");
 
     public MyPanel() {
         addComponent();
