@@ -4,20 +4,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.text.DecimalFormat;
 
-import static javax.swing.GroupLayout.Alignment.LEADING;
 
 public class MyPanel extends JPanel {
-    private JTextField textFieldA = new JTextField("");
-    private JTextField textFieldB = new JTextField("");
-    private JLabel titleLabel = new JLabel("Калькулятор", SwingConstants.CENTER);
-    private JLabel label = new JLabel("", SwingConstants.CENTER);
-    private JButton buttonP = new JButton("+");
-    private JButton buttonM = new JButton("-");
-    private JButton buttonS = new JButton("*");
-    private JButton buttonD = new JButton("/");
-    private ButtonGroup buttonGroup = new ButtonGroup();
-    Container container = new Container();
-    DecimalFormat decimalFormat = new DecimalFormat("#.###");
+    private final JTextField textFieldA = new JTextField("");
+    private final JTextField textFieldB = new JTextField("");
+    private final JLabel titleLabel = new JLabel("Калькулятор", SwingConstants.CENTER);
+    private final JLabel label = new JLabel("", SwingConstants.CENTER);
+    private final JButton buttonP = new JButton("+");
+    private final JButton buttonM = new JButton("-");
+    private final JButton buttonS = new JButton("*");
+    private final JButton buttonD = new JButton("/");
+    private Container container = new Container();
+    private DecimalFormat decimalFormat = new DecimalFormat("#.###");
 
     public MyPanel() {
         addComponent();
@@ -84,7 +82,7 @@ public class MyPanel extends JPanel {
     }
 
     private boolean checkField(JTextField textField) {
-        if (!textField.getText().equals("") && textField.getText().matches("[0-9]+"))
+        if (!textField.getText().equals("") && textField.getText().matches("[0-9.]+"))
             return true;
         else return false;
     }
