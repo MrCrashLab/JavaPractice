@@ -19,7 +19,7 @@ public class TestPractice {
     public static void randomPaintString(String str, ColorEnumeration[] colors) {
         Random random = new Random();
         for (int i = 0; i < str.length(); i++) {
-            System.out.print(colors[random.nextInt(7)].getControlExpression()
+            System.out.print(colors[random.nextInt(colors.length)].getControlExpression()
                     + str.charAt(i));
         }
     }
