@@ -27,10 +27,11 @@ public class TestPractice {
     public static void main(String[] args) {
         ColorEnumeration[] colors = ColorEnumeration.values();
         for (int i = 0; i < colors.length; i++) {
-            onePaintString("[" + i + "] Hello world!", colors[i]);
+            onePaintString("[" + i + "] Hello World!", colors[i]);
         }
-        morePaintString("Hello world!",colors);
+        morePaintString("Hello World!",colors);
         System.out.println("");
-        randomPaintString("Hello world!",colors);
+        randomPaintString("Hello World!",colors);
+        onePaintString("\nGoodbye World", ColorEnumeration.RED);
     }
 }
