@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class TestMain {
     public static void main(String[] args) {
-        String str = new String();
+        String str;
         String[] oldRules;
         String[] newRules;
         int numRules;
