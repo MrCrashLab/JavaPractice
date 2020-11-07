@@ -53,14 +53,14 @@ public class CreatorMarkDown {
         try (PrintWriter writer = new PrintWriter(mdFile);
              BufferedReader reader = new BufferedReader(new FileReader(currentFile))) {
             if (!currentFile.getParentFile().getAbsolutePath().equals(nowPath)) {
-                sb.append("#Практическая " + currentFile.getParentFile().getAbsolutePath().split("[_\\\\]")[5]);
+                sb.append("# Практическая " + currentFile.getParentFile().getAbsolutePath().split("[_\\\\]")[5]);
                 if (currentFile.getParentFile().getAbsolutePath().split("[_\\\\]").length > 6)
                     sb.append("-" + currentFile.getParentFile().getAbsolutePath().split("[_\\\\]")[6]);
                 sb.append("\n");
                 nowPath = currentFile.getParentFile().getAbsolutePath();
             }
 
-            sb.append("###Класс " + currentFile.getName());
+            sb.append("### Класс " + currentFile.getName());
             sb.append("\n" + "````java" + "\n");
             String line = reader.readLine();
             while (line != null) {
