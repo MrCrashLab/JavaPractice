@@ -19,8 +19,8 @@ public class CreatorMarkDown {
     public CreatorMarkDown(String basePath){
         this.mainPath = basePath + "/Practic_17_18";
         file = new File(basePath);
-        mdFile = new File("G:/Java code/JavaPractice" + "/" + "README.md");
-        createRootList();
+        mdFile = new File(mainPath + "/" + "README.md");
+        //createRootList();
 
         try {
             mdFile.createNewFile();
