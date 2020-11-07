@@ -16,10 +16,10 @@ public class CreatorMarkDown {
     private final StringBuilder sb = new StringBuilder();
     private String nowPath = "default";
 
-    public CreatorMarkDown(String basePath) {
+    public CreatorMarkDown(String basePath){
         this.mainPath = basePath + "/Practic_17_18";
         file = new File(basePath);
-        mdFile = new File(mainPath + "/" + "Text.md");
+        mdFile = new File("G:/Java code/JavaPractice" + "/" + "README.md");
         createRootList();
 
         try {
