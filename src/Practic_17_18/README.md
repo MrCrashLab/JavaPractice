@@ -279,7 +279,7 @@ public class Ball {
     }
 }
 ````
-# Практическая 3-Third
+# Практическая 3
 ### Класс BookTest.java
 ````java
 package Practic_3.Third_3;
@@ -343,7 +343,7 @@ public class Book {
     }
 }
 ````
-# Практическая 3-Third
+# Практическая 3
 ### Класс HumanTest.java
 ````java
 package Practic_3.Third_2;
@@ -438,7 +438,7 @@ public class Human {
     }
 }
 ````
-# Практическая 3-Third
+# Практическая 3
 ### Класс CircleTest.java
 ````java
 package Practic_3.Third_1;
