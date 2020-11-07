@@ -20,7 +20,7 @@ public class CreatorMarkDown {
         this.mainPath = basePath + "/Practic_17_18";
         file = new File(basePath);
         mdFile = new File(mainPath + "/" + "README.md");
-        //createRootList();
+        createRootList();
 
         try {
             mdFile.createNewFile();
