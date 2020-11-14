@@ -5,7 +5,7 @@ import java.net.*;
 import java.util.Scanner;
 
 public class Client {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         try {
             DatagramSocket socket = new DatagramSocket(248);
             System.out.print("Enter your name: ");
