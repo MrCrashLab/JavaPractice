@@ -279,7 +279,7 @@ public class Ball {
     }
 }
 ````
-# Практическая 3
+# Практическая 3-Third
 ### Класс BookTest.java
 ````java
 package Practic_3.Third_3;
@@ -343,7 +343,7 @@ public class Book {
     }
 }
 ````
-# Практическая 3
+# Практическая 3-Third
 ### Класс HumanTest.java
 ````java
 package Practic_3.Third_2;
@@ -438,7 +438,7 @@ public class Human {
     }
 }
 ````
-# Практическая 3
+# Практическая 3-Third
 ### Класс CircleTest.java
 ````java
 package Practic_3.Third_1;
@@ -2098,5 +2098,134 @@ public class CreatorMarkDown {
         }
         Collections.sort(keys);
     }
+}
+````
+# Практическая 19-20
+### Класс Server.java
+````java
+package Practic_19_20;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+
+public class Server {
+    public static void main(String[] args) throws IOException {
+        byte[] buffer = new byte[2048];
+        DatagramSocket datagramSocket = new DatagramSocket(722);
+        DatagramPacket packet = new DatagramPacket(buffer, 0, buffer.length);
+        DatagramPacket toPacket;
+        String message;
+        StringBuilder toMessage = new StringBuilder();
+        StringBuilder history = new StringBuilder();
+        HashMap<String, String> userNameAndIP = new HashMap<>();
+        ArrayList<InetAddress> addressIp = new ArrayList<>();
+        ArrayList<Integer> ports = new ArrayList<>();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date;
+        File file = new File("src/Practic_19_20/history.txt");
+
+        file.createNewFile();
+
+        while (true) {
+            datagramSocket.receive(packet);
+            message = new String(buffer, 0, packet.getLength());
+            date = new Date();
+            toMessage.append(dateFormat.format(date) + " | ");
+
+            if (userNameAndIP.get(packet.getAddress().getHostAddress() + packet.getPort()) == null
+                    || ports.indexOf(packet.getPort()) == -1) {
+                userNameAndIP.put(packet.getAddress().getHostAddress() + packet.getPort(), message);
+                toMessage.append("Server: Hello, " + message);
+                addressIp.add(packet.getAddress());
+                ports.add(packet.getPort());
+            } else {
+                toMessage.append(userNameAndIP.get(packet.getAddress().getHostAddress() + packet.getPort()) + ": ");
+                toMessage.append(message);
+            }
+
+            for (int i = 0; i < addressIp.size(); i++) {
+                toPacket = new DatagramPacket(toMessage.toString().getBytes(),
+                        0,
+                        toMessage.length(),
+                        addressIp.get(i),
+                        ports.get(i));
+                datagramSocket.send(toPacket);
+            }
+
+            System.out.println(toMessage);
+            history.append(toMessage.toString() + "\n");
+            toMessage = new StringBuilder();
+            try (PrintWriter writerFile = new PrintWriter(file)) {
+                writerFile.write(history.toString());
+            } catch (IOException e) {
+                e.getStackTrace();
+            }
+
+        }
+    }
+}
+````
+### Класс Client.java
+````java
+package Practic_19_20;
+
+import java.io.IOException;
+import java.net.*;
+import java.util.Scanner;
+
+public class Client {
+    public static void main(String[] args){
+        try {
+            DatagramSocket socket = new DatagramSocket(248);
+            System.out.print("Enter your name: ");
+            Thread thread = new Thread(() -> getMessage(socket));
+            thread.start();
+            thread = new Thread(() -> sendMessage(socket));
+            thread.start();
+        }catch(SocketException e){
+            e.getStackTrace();
+        }
+    }
+
+    public static void getMessage(DatagramSocket socket) {
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            DatagramPacket toPacket;
+            byte[] toSendBuffer = scanner.nextLine().getBytes();
+            try {
+                toPacket = new DatagramPacket(toSendBuffer, 0, toSendBuffer.length, InetAddress.getByName("192.168.1.34"), 722);
+                socket.send(toPacket);
+            } catch (UnknownHostException e) {
+                e.getStackTrace();
+            } catch (IOException e) {
+                e.getStackTrace();
+            }
+        }
+    }
+
+    public static void sendMessage(DatagramSocket socket) {
+        while (true) {
+            byte[] buffer = new byte[2048];
+            DatagramPacket packet = new DatagramPacket(buffer, 0, buffer.length);
+            String message;
+            try {
+                socket.receive(packet);
+                message = new String(buffer, 0, packet.getLength());
+                System.out.println(message);
+            } catch (IOException e) {
+                e.getStackTrace();
+            }
+        }
+    }
+
 }
 ````
