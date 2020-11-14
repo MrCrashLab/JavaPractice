@@ -1,0 +1,14 @@
+14/11/2020 20:20:01 | Server: Hello, Oleg
+14/11/2020 20:20:05 | Server: Hello, Maksim
+14/11/2020 20:20:09 | Server: Hello, Artem
+14/11/2020 20:20:13 | Server: Hello, Danila
+14/11/2020 20:20:17 | Oleg: Hello
+14/11/2020 20:20:22 | Maksim: Guten Tag
+14/11/2020 20:20:26 | Artem: Darova
+14/11/2020 20:20:35 | Danila: Privet
+14/11/2020 20:20:49 | Oleg: Chto proishodit?
+14/11/2020 20:20:57 | Maksim: Eto chat
+14/11/2020 20:21:04 | Maksim: Mi chatimsyz
+14/11/2020 20:21:13 | Maksim: Novomodnoe slovo
+14/11/2020 20:21:20 | Artem: Chill
+14/11/2020 20:21:24 | Danila: Kaef
