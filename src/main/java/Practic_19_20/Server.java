@@ -26,7 +26,7 @@ public class Server {
         ArrayList<Integer> ports = new ArrayList<>();
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date;
-        File file = new File("src/Practic_19_20/history.txt");
+        File file = new File("src/main/java/Practic_19_20/history.txt");
 
         file.createNewFile();
 
