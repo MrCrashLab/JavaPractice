@@ -16,6 +16,7 @@ import java.util.List;
 public class HttpJsonItemsStore implements ItemsStore{
     HttpClient httpClient = HttpClient.newHttpClient();
     Gson gson = new Gson();
+    String path = "http://localhost:3000/object";
 
     @Override
     public List<Item> getAllItem() {
@@ -23,7 +24,7 @@ public class HttpJsonItemsStore implements ItemsStore{
         }.getType();
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:3000/object"))
+                .uri(URI.create(path))
                 .build();
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -41,7 +42,7 @@ public class HttpJsonItemsStore implements ItemsStore{
     public Item getItem(int id) {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create("http://localhost:3000/object/"+id))
+                .uri(URI.create(path+"/"+id))
                 .build();
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
@@ -61,7 +62,7 @@ public class HttpJsonItemsStore implements ItemsStore{
         String body = gson.toJson(item);
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(body))
-                .uri(URI.create("http://localhost:3000/object"))
+                .uri(URI.create(path))
                 .setHeader("Content-Type", "application/json")
                 .build();
         try {
@@ -82,7 +83,7 @@ public class HttpJsonItemsStore implements ItemsStore{
         String body = gson.toJson(item);
         HttpRequest request = HttpRequest.newBuilder()
                 .PUT(HttpRequest.BodyPublishers.ofString(body))
-                .uri(URI.create("http://localhost:3000/object/"+id))
+                .uri(URI.create(path+"/"+id))
                 .setHeader("Content-Type", "application/json")
                 .build();
 
@@ -104,7 +105,7 @@ public class HttpJsonItemsStore implements ItemsStore{
     public boolean deleteItem(int id) {
         HttpRequest request = HttpRequest.newBuilder()
                 .DELETE()
-                .uri(URI.create("http://localhost:3000/object/"+id))
+                .uri(URI.create(path+"/"+id))
                 .build();
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());

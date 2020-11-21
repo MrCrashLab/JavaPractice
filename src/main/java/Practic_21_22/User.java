@@ -114,7 +114,7 @@ public class User {
 
     public StringBuilder printAddSuccessful(){
         StringBuilder sb = new StringBuilder();
-        sb.append("\u001B[92mОбъект успешно деобавлен!");
+        sb.append("\u001B[92mОбъект успешно добавлен!");
         return sb;
     }
 
