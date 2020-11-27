@@ -9,11 +9,11 @@ import java.net.http.HttpResponse;
 public class TestMain {
     public static void main(String[] args) {
         Worker worker = new Worker();
-        //deleteItem(1821, 2846);
+        //deleteItem(4000, 4600);
         worker.mainWork();
+        //worker.work();
     }
-/*
-    public static void deleteItem(int id, int end) {
+    /*public static void deleteItem(int id, int end) {
         HttpClient httpClient = HttpClient.newHttpClient();
         for (int i = id; i < end; i++) {
             HttpRequest request = HttpRequest.newBuilder()

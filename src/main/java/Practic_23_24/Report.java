@@ -1,9 +1,9 @@
 package Practic_23_24;
 
 public class Report {
-    private final String worker = "Dudarev";
     private int id;
     private int taskId;
+    private final String worker = "Dudarev";
     private double result;
 
     public Report(int id, int taskId, double result) {
