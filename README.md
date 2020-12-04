@@ -1,7 +1,7 @@
 # Практическая 1
 ### Класс Main.java
 ````java
-package Practic_1;
+package Practic_01;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -93,7 +93,7 @@ public class Main {
 # Практическая 2
 ### Класс Shape.java
 ````java
-package Practic_2;
+package Practic_02;
 
 public class Shape{
     private int height = -1;
@@ -118,7 +118,7 @@ public class Shape{
 ````
 ### Класс Main.java
 ````java
-package Practic_2;
+package Practic_02;
 
 import java.util.Scanner;
 
@@ -157,7 +157,7 @@ public class Main {
 ````
 ### Класс DogKennel.java
 ````java
-package Practic_2;
+package Practic_02;
 
 public class DogKennel {
     private Dog[] kennel;
@@ -195,7 +195,7 @@ public class DogKennel {
 ````
 ### Класс Dog.java
 ````java
-package Practic_2;
+package Practic_02;
 
 public class Dog {
     String name = "default";
@@ -231,7 +231,7 @@ public class Dog {
 ````
 ### Класс Book.java
 ````java
-package Practic_2;
+package Practic_02;
 
 public class Book {
     private int page = -1;
@@ -256,7 +256,7 @@ public class Book {
 ````
 ### Класс Ball.java
 ````java
-package Practic_2;
+package Practic_02;
 
 public class Ball {
     private int radius = -1;
@@ -282,7 +282,7 @@ public class Ball {
 # Практическая 3
 ### Класс BookTest.java
 ````java
-package Practic_3.Third_3;
+package Practic_03.Third_3;
 
 import java.util.Scanner;
 
@@ -312,7 +312,7 @@ public class BookTest {
 ````
 ### Класс Book.java
 ````java
-package Practic_3.Third_3;
+package Practic_03.Third_3;
 
 public class Book {
     private int page = -1;
@@ -346,7 +346,7 @@ public class Book {
 # Практическая 3
 ### Класс HumanTest.java
 ````java
-package Practic_3.Third_2;
+package Practic_03.Third_2;
 
 import java.util.Scanner;
 
@@ -383,7 +383,7 @@ public class HumanTest {
 ````
 ### Класс Human.java
 ````java
-package Practic_3.Third_2;
+package Practic_03.Third_2;
 
 public class Human {
     private Leg[] legs;
@@ -441,7 +441,7 @@ public class Human {
 # Практическая 3
 ### Класс CircleTest.java
 ````java
-package Practic_3.Third_1;
+package Practic_03.Third_1;
 
 import java.util.Scanner;
 
@@ -475,7 +475,7 @@ public class CircleTest {
 ````
 ### Класс Circle.java
 ````java
-package Practic_3.Third_1;
+package Practic_03.Third_1;
 
 public class Circle {
     private int radius = -1;
@@ -516,7 +516,7 @@ public class Circle {
 # Практическая 4
 ### Класс Square.java
 ````java
-package Practic_4;
+package Practic_04;
 
 public class Square extends Shape{
     private double widlen = -1;
@@ -547,7 +547,7 @@ public class Square extends Shape{
 ````
 ### Класс Shape.java
 ````java
-package Practic_4;
+package Practic_04;
 
 public abstract class Shape {
     protected String color = "red";
@@ -579,7 +579,7 @@ public abstract class Shape {
 ````
 ### Класс Rectangle.java
 ````java
-package Practic_4;
+package Practic_04;
 
 public class Rectangle extends Shape {
     protected double width = 1;
@@ -627,7 +627,7 @@ public class Rectangle extends Shape {
 ````
 ### Класс Main.java
 ````java
-package Practic_4;
+package Practic_04;
 
 public class Main {
 
@@ -643,7 +643,7 @@ public class Main {
 ````
 ### Класс Circle.java
 ````java
-package Practic_4;
+package Practic_04;
 
 public class Circle extends Shape {
     protected double radius = 1;
@@ -683,7 +683,7 @@ public class Circle extends Shape {
 # Практическая 5
 ### Класс MovableRectangle.java
 ````java
-package Practic_5;
+package Practic_05;
 
 public class MovableRectangle implements Movable {
 
@@ -754,7 +754,7 @@ public class MovableRectangle implements Movable {
 ````
 ### Класс MovablePoint.java
 ````java
-package Practic_5;
+package Practic_05;
 
 public class MovablePoint implements Movable {
 
@@ -808,9 +808,9 @@ public class MovablePoint implements Movable {
 ````
 ### Класс MovableCircle.java
 ````java
-package Practic_5;
+package Practic_05;
 
-import Practic_4.Circle;
+import Practic_04.Circle;
 
 public class MovableCircle extends Circle implements Movable {
     private MovablePoint center;
@@ -846,7 +846,7 @@ public class MovableCircle extends Circle implements Movable {
 ````
 ### Класс Movable.java
 ````java
-package Practic_5;
+package Practic_05;
 
 public interface Movable {
     public void moveUp();
@@ -859,7 +859,7 @@ public interface Movable {
 ````
 ### Класс Main.java
 ````java
-package Practic_5;
+package Practic_05;
 
 public class Main {
 
@@ -876,9 +876,8 @@ public class Main {
 # Практическая 6
 ### Класс Main.java
 ````java
-package Practic_6;
+package Practic_06;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -919,7 +918,7 @@ public class Main {
 # Практическая 7-8
 ### Класс TopManager.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 public class TopManager implements EmployeePosition {
     Company company;
@@ -941,7 +940,7 @@ public class TopManager implements EmployeePosition {
 ````
 ### Класс Test.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 import java.util.List;
 
@@ -1004,7 +1003,7 @@ public class Test {
 ````
 ### Класс Operator.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 public class Operator implements EmployeePosition {
 
@@ -1021,7 +1020,7 @@ public class Operator implements EmployeePosition {
 ````
 ### Класс Manager.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 import java.util.Random;
 
@@ -1047,7 +1046,7 @@ public class Manager implements EmployeePosition {
 ````
 ### Класс EmployeePosition.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 public interface EmployeePosition {
     String getJobTitle();
@@ -1057,7 +1056,7 @@ public interface EmployeePosition {
 ````
 ### Класс Employee.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 public class Employee {
     private String name;
@@ -1108,7 +1107,7 @@ public class Employee {
 ````
 ### Класс Company.java
 ````java
-package Practic_7_8;
+package Practic_07_08;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1186,7 +1185,7 @@ public class Company {
 # Практическая 9
 ### Класс Test.java
 ````java
-package Practic_9;
+package Practic_09;
 
 import java.time.LocalDate;
 import java.util.Random;
@@ -1234,7 +1233,7 @@ public class Test {
 ````
 ### Класс Selector.java
 ````java
-package Practic_9;
+package Practic_09;
 
 public class Selector implements EmployeeSelector {
     private int year;
@@ -1251,7 +1250,7 @@ public class Selector implements EmployeeSelector {
 ````
 ### Класс Holder.java
 ````java
-package Practic_9;
+package Practic_09;
 
 public class Holder implements EmployeeHolder{
     @Override
@@ -1262,7 +1261,7 @@ public class Holder implements EmployeeHolder{
 ````
 ### Класс EmployeeSelector.java
 ````java
-package Practic_9;
+package Practic_09;
 
 public interface EmployeeSelector {
     boolean isNeedEmployee(Employee employee);
@@ -1270,7 +1269,7 @@ public interface EmployeeSelector {
 ````
 ### Класс EmployeeHolder.java
 ````java
-package Practic_9;
+package Practic_09;
 
 public interface EmployeeHolder {
     void holderEmployee(Employee employee, int index);
@@ -1278,7 +1277,7 @@ public interface EmployeeHolder {
 ````
 ### Класс Employee.java
 ````java
-package Practic_9;
+package Practic_09;
 
 
 import java.time.LocalDate;
@@ -1364,7 +1363,7 @@ public class Employee {
 ````
 ### Класс Company.java
 ````java
-package Practic_9;
+package Practic_09;
 
 import java.util.ArrayList;
 
