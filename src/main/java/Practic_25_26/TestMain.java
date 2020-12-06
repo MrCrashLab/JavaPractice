@@ -3,6 +3,7 @@ package Practic_25_26;
 public class TestMain {
     public static void main(String[] args) {
         MyHashMap<Integer, String> myHashMap = new MyHashMap();
+        MyHashMap<Integer, String> myHashMap2 = new MyHashMap();
         myHashMap.add(1, "Hello");
         myHashMap.add(5, "World");
         myHashMap.add(129, "Goodbye");
