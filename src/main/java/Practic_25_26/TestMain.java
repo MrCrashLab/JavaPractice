@@ -1,21 +1,18 @@
 package Practic_25_26;
 
-import java.util.HashMap;
-
 public class TestMain {
     public static void main(String[] args) {
         MyHashMap<Integer, String> myHashMap = new MyHashMap();
-        myHashMap.add(1,"Hello");
-        myHashMap.add(5,"World");
-        myHashMap.add(129,"Goodbye");
-        System.out.println("Get: "+myHashMap.get(1));
-        System.out.println("Get: "+myHashMap.get(5));
-        System.out.println("Get: "+myHashMap.get(129));
-        System.out.println("Delete: "+myHashMap.remove(5));
+        myHashMap.add(1, "Hello");
+        myHashMap.add(5, "World");
+        myHashMap.add(129, "Goodbye");
+        System.out.println("Get: " + myHashMap.get(1));
+        System.out.println("Get: " + myHashMap.get(5));
+        System.out.println("Get: " + myHashMap.get(129));
+        System.out.println("Delete: " + myHashMap.remove(5));
         System.out.println("///ForEach///");
-        for(String map: myHashMap){
+        for (String map : myHashMap) {
             System.out.println(map);
         }
-
     }
 }
