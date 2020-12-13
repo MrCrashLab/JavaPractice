@@ -1,12 +1,12 @@
 package Practic_27_28;
 
 
-public class Tasking {
+public class Task {
     private String type;
     private Data data = new Data();
     private int id;
 
-    public Tasking(String type, Data data, int id) {
+    public Task(String type, Data data, int id) {
         this.type = type;
         this.data = data;
         this.id = id;

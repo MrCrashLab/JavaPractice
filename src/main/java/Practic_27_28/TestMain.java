@@ -22,9 +22,9 @@ public class TestMain {
         Worker worker = new Worker();
         Class<Worker> workerClass = Worker.class;
         URI uri = URI.create("http://gitlessons2020.rtuitlab.ru:3000/reflectionTasks");
-        ArrayList<Tasking> tasks = (ArrayList<Tasking>) getAllTask(uri);
+        ArrayList<Task> tasks = (ArrayList<Task>) getAllTask(uri);
         try {
-            for (Tasking task : tasks) {
+            for (Task task : tasks) {
                 workerClass.getDeclaredMethod(task.getType(), Data.class).invoke(worker, task.getData());
             }
         } catch (IllegalAccessException e) {
@@ -37,7 +37,7 @@ public class TestMain {
     }
 
     static public List getAllTask(URI uri) {
-        Type collectionType = new TypeToken<Collection<Tasking>>() {
+        Type collectionType = new TypeToken<Collection<Task>>() {
         }.getType();
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
@@ -45,7 +45,7 @@ public class TestMain {
                 .build();
         try {
             HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-            List<Tasking> taskList = gson.fromJson(response.body(), collectionType);
+            List<Task> taskList = gson.fromJson(response.body(), collectionType);
             return taskList;
         } catch (InterruptedException e) {
             e.printStackTrace();
