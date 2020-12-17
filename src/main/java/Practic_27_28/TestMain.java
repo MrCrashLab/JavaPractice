@@ -2,11 +2,10 @@ package Practic_27_28;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Method;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -23,7 +22,7 @@ public class TestMain {
     static Gson gson = new Gson();
     static HttpClient httpClient = HttpClient.newHttpClient();
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Worker worker = new Worker();
         Class<Worker> workerClass = Worker.class;
         URI uri = URI.create("http://gitlessons2020.rtuitlab.ru:3000/reflectionTasks");
@@ -36,10 +35,10 @@ public class TestMain {
         try {
             for (Task task : tasks) {
                 List<Method> tmpMethods = methods.stream()
-                        .filter(a->a.getName().equals(task.getType()))
+                        .filter(a -> a.getName().equals(task.getType()))
                         .collect(Collectors.toList());
-                for(Method method:tmpMethods){
-                    method.invoke(worker,task.getData());
+                for (Method method : tmpMethods) {
+                    method.invoke(worker, task.getData());
                 }
             }
         } catch (IllegalAccessException e) {
