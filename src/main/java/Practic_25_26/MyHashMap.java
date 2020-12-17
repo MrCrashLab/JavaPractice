@@ -6,7 +6,7 @@ import java.util.LinkedList;
 
 public class MyHashMap<K, V> implements HashMapInterface<K, V>, Iterable<V> {
     private final int size = 128;
-    private final LinkedList<Node<K, V>>[] map = new LinkedList[128];
+    private final LinkedList<Node<K, V>>[] map = new LinkedList[size];
     private final ArrayList<V> list = new ArrayList<>();
 
     @Override
@@ -15,6 +15,8 @@ public class MyHashMap<K, V> implements HashMapInterface<K, V>, Iterable<V> {
         int index = hashFunction(key);
         if (map[index] == null)
             map[index] = new LinkedList<>();
+        if(get(key)!=null)
+            remove(key);
         map[index].add(node);
         list.add(value);
     }
