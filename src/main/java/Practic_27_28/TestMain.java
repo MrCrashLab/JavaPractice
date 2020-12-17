@@ -30,15 +30,11 @@ public class TestMain {
                 .filter(a -> a.isAnnotationPresent(ConsoleOperation.class))
                 .collect(Collectors.toList());
         ArrayList<Task> tasks = (ArrayList<Task>) getAllTask(uri);
-        //System.out.println(methods.size());
-        //System.out.println(workerClass.getDeclaredMethods().length);
         try {
             for (Task task : tasks) {
-                List<Method> tmpMethods = methods.stream()
-                        .filter(a -> a.getName().equals(task.getType()))
-                        .collect(Collectors.toList());
-                for (Method method : tmpMethods) {
-                    method.invoke(worker, task.getData());
+                for (Method method : methods) {
+                    if(method.getDeclaredAnnotation(ConsoleOperation.class).type().equals(task.getType()))
+                        method.invoke(worker, task.getData());
                 }
             }
         } catch (IllegalAccessException e) {

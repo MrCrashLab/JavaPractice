@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.stream.IntStream;
 
 public class Worker {
-    @ConsoleOperation
+    @ConsoleOperation(type = "sum")
     public void sum(Data data){
         ArrayList<Integer> num = data.getNumbers();
         int sum = num.stream().flatMapToInt(IntStream::of).sum();
         System.out.println(sum);
     }
 
-    @ConsoleOperation
+    @ConsoleOperation(type = "print")
     public void print(Data data){
         StringBuilder sb = new StringBuilder();
         ArrayList<String> list = data.getWords();
