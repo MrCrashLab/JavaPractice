@@ -35,7 +35,9 @@ public class TestMain {
         //System.out.println(workerClass.getDeclaredMethods().length);
         try {
             for (Task task : tasks) {
-                List<Method> tmpMethods = methods.stream().filter(a->a.getName().equals(task.getType())).collect(Collectors.toList());
+                List<Method> tmpMethods = methods.stream()
+                        .filter(a->a.getName().equals(task.getType()))
+                        .collect(Collectors.toList());
                 for(Method method:tmpMethods){
                     method.invoke(worker,task.getData());
                 }
